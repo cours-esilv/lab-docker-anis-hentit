@@ -1,1 +1,11 @@
-docker run -p 5000:5000 -e CURRENT_ENVIRONMENT=dev mlops:latest
+# This command is expected to fail because the environment variable is not set
+docker run -p 5000:5000 --name my-mlops-service mlops:latest
+
+# This command stops the container
+docker stop my-mlops-service
+
+# This command removes the container
+docker rm my-mlops-service
+
+# This command runs the container with the environment variable, which should succeed
+docker run -p 5000:5000 -e CURRENT_ENVIRONMENT=dev --name my-mlops-service mlops:latest
