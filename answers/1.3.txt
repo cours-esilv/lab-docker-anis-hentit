@@ -1,1 +1,2 @@
+docker build -t mlops:latest ./app/back
 docker run  mlops:latest
