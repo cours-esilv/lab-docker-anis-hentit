@@ -1,0 +1,2 @@
+docker run -d -p 5000:5000 --name back-end -e CURRENT_ENVIRONMENT=development anis1930/mlops:latest
+docker run -d -p 8080:80 --name front-end -e WS_BACK_URL=http://host.docker.internal:5000 anis1930/frontend:latest
